@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Gêneros</title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+
+<body>
+    <figure>
+        <a href="/"> <img src="/img/logo-DH.png" alt="Logo Digital House"></a>
+      </figure>
+    <h1>LISTA DE GÊNEROS</h1>
+    <ul>
+        <% genres.forEach(genre => { %>
+            <li>
+                <a href="/genres/detail/?genres=<%= genre.name %>"> <%= genre.name %> </a>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+
+</html>

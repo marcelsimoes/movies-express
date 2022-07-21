@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= movie.title %> </title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+<body>
+    <figure>
+        <a href="/"> <img src="/img/logo-DH.png" alt="Logo Digital House"></a>
+    </figure>
+    <h1><%= movie.title %> </h1>    
+    <br>
+    <a href="/movies"><strong> Return List </strong> </a>
+    <br>
+    <br>
+    <p>RATING: <%= movie.rating %> </p>
+    <p>AWARDS: <%= movie.awards %> </p>
+    <p>LENGTH: <%= movie.length == null ? `not data`: `${movie.length} min` %> </p>
+    <p>RELEASE DATE: <%= movie.release_date.toLocaleDateString('pt-BR') %> </p>
+    <p>GENRE: <%= movie.genres != null ? movie.genres.name : 'unknown' %> </p> 
+    <br>
+    <ul>
+        <li><a href="/movies/detail/<%= movie.id %>/actors"> Ver Atores </a></li>
+        <li><a href="/movies/update/<%= movie.id %>"> Atualizar </a></li>
+        <li><a href="/movies/delete/<%= movie.id %>"> Deletar </a> </li>
+    </ul>
+</body>
+</html>
